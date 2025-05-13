@@ -1,4 +1,4 @@
-# This is a test comment for the 'code-change' build
+# Another test comment for the 'optimized-v2' build
 from fastapi.staticfiles import StaticFiles
 from starlette.responses import FileResponse
 
