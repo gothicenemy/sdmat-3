@@ -27,7 +27,7 @@ async function connectDB() {
 connectDB();
 
 app.get('/', (req, res) => {
-    res.send('Notes API is running!');
+    res.send('Notes API is running - v2!')
 });
 
 app.post('/notes', async (req, res) => {
