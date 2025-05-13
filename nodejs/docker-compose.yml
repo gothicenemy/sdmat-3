@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: node-app:notes-app-dc
+    container_name: node_notes_app_service
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URL: ${MONGO_URL_COMPOSE:-mongodb://mongo_db_notes:27017/notesdb}
+      PORT: 3000
+    depends_on:
+      - mongo_db_notes
+    restart: unless-stopped
+
+
+  mongo_db_notes:
+    image: mongo:latest
+    container_name: mongo_notes_db_service
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_notes_data:/data/db
+    restart: unless-stopped
+
+
+volumes:
+  mongo_notes_data:
