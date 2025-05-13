@@ -1,4 +1,3 @@
-# Another test comment for the 'optimized-v2' buildfrom fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from starlette.responses import FileResponse
 
