@@ -1,8 +1,8 @@
-FROM python:3.10-alpine
+FROM python:3.10-bullseye
 
 WORKDIR /app
 
-RUN apk add --no-cache gcc gfortran musl-dev linux-headers lapack-dev build-base # <--- ДОДАНО
+## RUN apk add --no-cache gcc gfortran musl-dev linux-headers lapack-dev build-base # <--- ДОДАНО
 
 COPY requirements/backend.in .
 RUN pip install --no-cache-dir -r backend.in
